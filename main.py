@@ -1,63 +1,69 @@
-#for number in range(3):
-#    print(f"{number}) Первый цикл")
-#    
-#   for number in range(5):
-#       print(f"{number}) Второй цикл")
-# Имортируем библиотеку
-import random
-# Создаем случайное число типа int от 0 до 10
-rand_num = random.randint(0, 10)
+#      { Ключ : Значение }
+#      { Key : Value }  
+a = {
+        "cat" : "кошка",
+        "dog" : "собака",
+        "monkey" : "обезьяна"
+    }
+# Вывод значений через ключ
+print(a["cat"])
+print(a["dog"])
+print(a["monkey"])
+# Вывод всех ключей
+print(a.keys())
+# Вывод всех значаний 
+print(a.values())
 
-print(rand_num)
+b = {
+        "name": "Artem",
+        "age": 42,
+        "city": "Zelenograd",
+        "job": "KIBERone"
+    }
 
-# Создание пустого массива
+c = {
+        "name": "Oleg",
+        "age": 45,
+        "city": "Zelenograd",
+        "job": "KIBERone"
+    }
+
+
+
+# Вводим число 1 или 2 и в зависимости от него подставляем значением в переменную human
+ch = int(input())
+
+if ch == 1: 
+    human = b
+if ch == 2:
+    human = c
+
+print(human["name"], human["age"])
+#------------------
+
+# Создаем пустой массив
 array = []
-# Заполнение массива
-for i in range(10):
-    num = random.randint(0,10)
-    array.append(num)
+# Вписываем количество людей, которое будем создавать и добавлять в массив
+count = int(input("Сколько людей добавить? "))
 
-print(array)
-# Перевернуть массив
-array.reverse()
-print(array)
-# Отсортировать
-array.sort()
-print(array)
+# Вводим данные и формируем словарь
+for i in range(count):
 
-array.reverse()
-print(array)
+    name = input("Введите имя: ")
+    age = input("Введите возраст: ")
 
-#            0        1        2  ...
-student = ["Олег", "Артем", "Егор"]
-print(student)
-# Вывод по индексу
-print(student[-1])
+    d = { "name": name, "age": age }
+    # Добавляем словать в массив
+    array.append(d)
+# Выводим словарь 
+for i in array:
+    print(f"Имя: {i['name']}\nВозраст: {i['age']}")
 
-# Удалить из массива по индексу
-student.pop()
-print(student)
+# Имя: Артем
+# Возраст: 33
 
-# Удалить из массива по занчению
-student.remove("Артем")
-print(student)
+# Имя: Олег
+# Возраст: 32
 
+# f"Привет {i['name']} \n тут новая строка"
 
-# 1) Создать массив учеников
-# 2) Каждому ученику нужно поставить СЛУЧАЙНУЮ оценку
-# Артем - 4
-# 3) ВСЕМ АРТЕМАМ СТАВИМ ТОЛЬКО 5
-
-students = ["Олег", "Артем", "Егор"]
-
-for i in students:
-    rand = random.randint(1,5)
-    print(f"{i} - {rand}")
-
-
-
-#rang_to_arr = list(range(10))
-#print(rang_to_arr)
-
-#for i in array:
-#    print(i)
